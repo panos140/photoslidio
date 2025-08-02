@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photoslidio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #1e1e1e;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header button {
+      background: #007acc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #007acc, #005f8a);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      background: white;
+      color: #007acc;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .main img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .buttons button {
+      background: #007acc;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #80cfff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Photoslidio</h1>
+    <button onclick="scrollToMain()">Get Photoslidio</button>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Photoslidio</h2>
+    <p>Create stunning photo slideshows with music, transitions, and style.</p>
+    <button onclick="scrollToMain()">Get Started</button>
+  </section>
+
+  <div class="main" id="main">
+    <img src="https://i.imgur.com/gbqxmRw.png" alt="Photoslidio Screenshot" />
+    <h2>Make beautiful photo slideshows with music.</h2>
+    <p>Photoslidio is a simple yet powerful tool for creating stylish slideshows. Try the demo or get the full version with a license key.</p>
+
+    <div class="buttons">
+      <a href="photoslidio-demo-setup.exe" download style="text-decoration: none;">
+      <button>Download Demo</button>
+      </a>
+      <button id="buy_license_btn">Buy License</button>
+      <button id="buy_full_btn">Pay Now</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Photoslidio. All rights reserved. |
+    <a href="https://panos140.itch.io/photoslidio" target="_blank">itch.io page</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://static.itch.io/api.js"></script>
+  <script>
+    function scrollToMain() {
+      document.querySelector('#main').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Attach Itch.io Buy Buttons
+    Itch.attachBuyButton(document.getElementById("buy_license_btn"), {
+      user: "panos140",
+      game: "photoslidio-license"
+    });
+
+    Itch.attachBuyButton(document.getElementById("buy_full_btn"), {
+      user: "panos140",
+      game: "photoslidio"
+    });
+  </script>
+
+</body>
+</html>
